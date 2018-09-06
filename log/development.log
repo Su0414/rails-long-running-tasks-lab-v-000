@@ -2211,3 +2211,55 @@ Cannot render console from 47.18.105.107! Allowed networks: 127.0.0.1, ::1, 127.
 Processing by SongsController#show as HTML
   Parameters: {"id"=>"511"}
   [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 511]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered songs/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 23ms (Views: 18.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/songs" for 47.18.105.107 at 2018-09-06 22:11:01 +0000
+Cannot render console from 47.18.105.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (2.3ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered songs/index.html.erb within layouts/application (124.5ms)
+Completed 200 OK in 131ms (Views: 126.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/songs/12" for 47.18.105.107 at 2018-09-06 22:11:29 +0000
+Cannot render console from 47.18.105.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered songs/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/songs/12/edit" for 47.18.105.107 at 2018-09-06 22:11:33 +0000
+Cannot render console from 47.18.105.107! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 12]]
+  Rendered songs/edit.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for #<Song:0x007f674a8f7128>):
+    1: <h1>Editing <%= @song.name %></h1>
+    2: 
+    3: <%= render 'form' %>
+  app/views/songs/edit.html.erb:1:in `_app_views_songs_edit_html_erb___3973998788630623196_70040804631620'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.4ms)
